@@ -1,0 +1,43 @@
+
+
+   body{
+    background-image: url("../Images/detail.jpg");
+  } 
+
+.contenedordetail{
+  position: relative;
+  height: 800px;
+  width: 100%;
+  
+}
+
+.containercard{
+  background-color: darkgrey;
+    position: absolute;
+    color:white ;
+    border-radius: 5px;
+    margin-top: 20px;
+    height: 95vh;
+    width:900px;
+    box-shadow: 5px 6px 11px 0 rgba(20, 28, 30, 0.75);
+    left: 25%;
+    
+}
+.imgcard{
+   border-radius: 10px;
+    border: 2px solid white;
+    object-fit: cover;
+    margin-top: 10px;
+  }
+
+  .description{
+    
+    height: 300px;
+    overflow-y: scroll;
+    margin: 0 5%;
+   
+  }
+
+  .btndetail{
+    margin-top: 10px;
+  }

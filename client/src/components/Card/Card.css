@@ -1,0 +1,23 @@
+.hero2 {
+
+  display: inline-block;
+  position: relative;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: white;
+  width: 300px;
+  min-width: 300px;
+  height: 450px;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 5px 5px 30px rgba(255, 254, 254, 0.8);
+  background-color: cadetblue;
+  margin: 30px;
+}
+
+.img{
+    color: #fff;
+    padding: 7px;
+  font-weight: bold;
+  
+}
+

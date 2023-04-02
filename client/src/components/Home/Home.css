@@ -1,0 +1,73 @@
+.container2{
+    min-height: 100vh;
+    
+}
+
+.gif{
+    background-attachment: fixed;
+    background-size: cover;
+    width: 80px;
+    height: 100vh;
+    
+    position:fixed;		
+    width: 100%;
+    top:0;
+    left: 0;
+    
+    
+}
+
+
+.hero{
+
+    position: absolute;
+    
+    width: 100%;
+    left: 0;
+    top: 0;
+    margin-top: 40px;
+}
+
+.container2{
+    padding: 20px;
+    
+}
+
+select {
+    border: 10px;
+    padding: 8px;
+    margin-left: 15px;
+    background-color: rgb(253, 251, 251);
+    color: black;
+}
+
+select option{ 
+    border:0;
+    border-bottom:1px solid #555;  
+    background: #969699;
+    width:100%;
+    padding:8px 0 5px 0;
+    font-size:16px;
+    color: black;
+    margin-top: 20px;
+  }
+
+.btnreaload{
+    margin-bottom: 15px;
+}
+
+.imgvideogame{
+    position: relative;
+    z-index: 1;
+    width: 15%;
+    display: flex;
+    border-radius: 10px;
+    opacity: 0.8;
+}
+
+.create{
+    position: absolute;
+    display: flex;
+    right: 50px;
+    top: 0;
+}

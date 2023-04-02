@@ -1,0 +1,27 @@
+.containerfound{
+    
+    min-height: 100vh;
+    position: relative;
+    width: 100%;
+}
+
+.notfound{
+    position: absolute;
+    
+    
+}
+
+.imgfound{
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+
+.btnfound{
+    position: absolute;
+    color: black;
+    top: 150px;
+    left: 45%;
+}

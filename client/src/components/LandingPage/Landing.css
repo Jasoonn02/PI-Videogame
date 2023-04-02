@@ -1,0 +1,44 @@
+
+.container .image {
+    width: 80px;
+    height: 100vh;
+    display: block;
+    position: relative;		
+    width: 100%;
+  }
+  
+  .title{
+    color: black;
+    position: absolute;
+    bottom: 600px;
+    left: 0;
+    
+    width: 100%;
+    text-align: center;
+  }
+
+  .btn {
+    background-color: rgb(46, 46, 179);
+    color: cornsilk;
+    border-radius: 30px;
+    font-size: 20px;
+    
+    bottom: 400px;
+    left: 45%;
+    padding: 10px;
+    width: 7%;
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow, transform;
+    transition-property: box-shadow, transform;
+  }
+
+  .btn:hover, .btn:focus, .btn:active{
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }

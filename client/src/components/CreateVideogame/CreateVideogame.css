@@ -1,0 +1,46 @@
+
+.herocreate{
+    position: absolute;
+    background-color: rgb(57, 70, 96);
+    border-radius: 15px;
+    height: 700px;
+    width: 700px;
+    top: 100px;
+    left: 600px;
+}
+
+.form{
+    position: absolute;
+    height: 550px;
+    left: 70px;
+    width: 80%;
+    border-radius: 15px;
+    text-align: center;
+    background-color: rgb(63, 53, 39);
+}
+
+.inputcreate{
+    margin-top: 15px;
+}
+
+.btncreate{
+   
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.platform{
+    margin-bottom: 20px;
+}
+
+.delete{
+    display: flex;
+    
+    justify-content: space-around;
+    
+}
+
+.errors{
+    color: red;
+}
