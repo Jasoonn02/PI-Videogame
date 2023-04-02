@@ -5,6 +5,8 @@ import LandingPage from './components/LandingPage/LandingPage';
 import CreateVideogame from './components/CreateVideogame/CreateVideogame';
 import Detail from './components/Detail/Detail';
 import PageNotFound from './components/PageNotFound/PageNotFound';
+import axios from "axios"
+axios.defaults.baseURL = "http://localhost:3001/"
 
 function App() {
   return (
