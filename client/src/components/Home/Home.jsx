@@ -129,7 +129,7 @@ export default function Home() {
 
           <SearchBar />
 
-          {currentGames ? (
+          {currentGames && Array.isArray(currentGames) ? (
             currentGames.map((el) => {
               return (
                 <fragment>
