@@ -23,13 +23,10 @@ export default function Home() {
   const dispatch = useDispatch();
 
   const allVideogames = useSelector((state) => state.videogame);
-  console.log(allVideogames);
   const allGenres = useSelector((state) => state.genre);
-  // console.log(allGenres);
   const [order, setOrder] = useState(" ");
 
   const currentPage = useSelector((state) => state.currentPage);
-  // const [currentPage, setCurrentPage] = useState(1);
   const [gamesPerPage, setGamePerPage] = useState(15);
 
   const indexOfLastVideogame = currentPage * gamesPerPage;
@@ -105,15 +102,12 @@ export default function Home() {
           </select>
           <select className="select" onChange={(e) => handleFilterGenre(e)}>
             <option value="all">All Genres</option>
-            {/* {allGenres ? (
-              allGenres?.map((el) => (
+            {Array.isArray(allGenres) &&
+              allGenres.map((el) => (
                 <option key={el} value={el.name}>
                   {el.name}
                 </option>
-              ))
-            ) : (
-              <option>Loading genres...</option>
-            )} */}
+              ))}
           </select>
           <select className="select" onChange={(e) => handleCreated(e)}>
             <option value="all">All VideoGames</option>
@@ -129,7 +123,7 @@ export default function Home() {
 
           <SearchBar />
 
-          {/* {currentGames && currentGames.length > 0 ? (
+          {Array.isArray(currentGames) && currentGames.length ? (
             currentGames.map((el) => {
               return (
                 <fragment>
@@ -145,8 +139,10 @@ export default function Home() {
               );
             })
           ) : (
-            <p>No hay juegos disponibles</p>
-          )} */}
+            <p>
+              <Loading />
+            </p>
+          )}
         </div>
       </div>
     </div>
