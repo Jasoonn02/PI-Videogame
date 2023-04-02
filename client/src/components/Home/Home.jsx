@@ -105,7 +105,7 @@ export default function Home() {
           </select>
           <select className="select" onChange={(e) => handleFilterGenre(e)}>
             <option value="all">All Genres</option>
-            {allGenres ? (
+            {/* {allGenres ? (
               allGenres?.map((el) => (
                 <option key={el} value={el.name}>
                   {el.name}
@@ -113,7 +113,7 @@ export default function Home() {
               ))
             ) : (
               <option>Loading genres...</option>
-            )}
+            )} */}
           </select>
           <select className="select" onChange={(e) => handleCreated(e)}>
             <option value="all">All VideoGames</option>
