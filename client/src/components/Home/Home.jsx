@@ -130,7 +130,7 @@ export default function Home() {
           <SearchBar />
 
           {currentGames ? (
-            currentGames?.map((el) => {
+            currentGames.map((el) => {
               return (
                 <fragment>
                   <Link to={"/detail/" + el.id}>
