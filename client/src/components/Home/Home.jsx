@@ -129,8 +129,8 @@ export default function Home() {
 
           <SearchBar />
 
-          {currentGames.length ? (
-            currentGames?.map((el) => {
+          {currentGames ? (
+            currentGames.map((el) => {
               return (
                 <fragment>
                   <Link to={"/detail/" + el.id}>
