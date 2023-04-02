@@ -100,14 +100,14 @@ export default function Home() {
             <option value="Hrat">More Rating</option>
             <option value="Lrat">Less Rating</option>
           </select>
-          <select className="select" onChange={(e) => handleFilterGenre(e)}>
+          {/* <select className="select" onChange={(e) => handleFilterGenre(e)}>
             <option value="all">All Genres</option>
-            {allGenres.length > 0? allGenres?.map((el) => (
+            {allGenres?.map((el) => (
               <option key={el} value={el.name}>
                 {el.name}
               </option>
-            )): <p>Loading</p>}
-          </select>
+            ))}
+          </select> */}
           <select className="select" onChange={(e) => handleCreated(e)}>
             <option value="all">All VideoGames</option>
             <option value="api">Existing</option>
@@ -123,18 +123,26 @@ export default function Home() {
         
           <SearchBar />
         
-          {currentGames.length > 0?
-          currentGames?.map((el) => {
-            return (
-              <fragment>
-                <Link to={"/detail/" + el.id}>
-                  <Card image={el.image} name={el.name} genre={el.genres} rating={el.rating} />
-                </Link>
-              </fragment>
-            );
-          })
-        : <p><Loading/></p>
-        }
+          {Array.isArray(currentGames) && currentGames.length ? (
+  currentGames.map((el) => {
+    return (
+      <fragment>
+        <Link to={"/detail/" + el.id}>
+          <Card
+            image={el.image}
+            name={el.name}
+            genre={el.genres}
+            rating={el.rating}
+          />
+        </Link>
+      </fragment>
+    );
+  })
+) : (
+  <p>
+    <Loading />
+  </p>
+)}
         </div>
       </div>
     </div>
