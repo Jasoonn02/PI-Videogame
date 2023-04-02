@@ -8,31 +8,27 @@ import {
   filterCreated,
   orderByName,
   orderRating,
-  statePag
+  statePag,
 } from "../../action";
 import { Link } from "react-router-dom";
 import Card from "../Card/Card";
 import Paginado from "../Paginado/Paginado";
 import SearchBar from "../SearchBar/SearchBar";
 import "./Home.css";
-import videogame from "../Images/videogame.jpg"
+import videogame from "../Images/videogame.jpg";
 import callofduty from "../Images/callofduty.gif";
 import Loading from "../Loading/Loading";
-
-
-
 
 export default function Home() {
   const dispatch = useDispatch();
 
-  
   const allVideogames = useSelector((state) => state.videogame);
   console.log(allVideogames);
   const allGenres = useSelector((state) => state.genre);
   // console.log(allGenres);
   const [order, setOrder] = useState(" ");
 
-  const currentPage = useSelector((state)=>state.currentPage)
+  const currentPage = useSelector((state) => state.currentPage);
   // const [currentPage, setCurrentPage] = useState(1);
   const [gamesPerPage, setGamePerPage] = useState(15);
 
@@ -56,16 +52,15 @@ export default function Home() {
   }, [dispatch]);
 
   function handleClick(e) {
-    e.preventDefault()
-    dispatch(getVideogame())
+    e.preventDefault();
+    dispatch(getVideogame());
     // setCurrentPage(1)
-    
   }
 
   function handleFilterGenre(e) {
     dispatch(filterByGenre(e.target.value));
     // setCurrentPage(1);
-    dispatch(statePag(1))
+    dispatch(statePag(1));
   }
 
   function handleCreated(e) {
@@ -87,12 +82,16 @@ export default function Home() {
   return (
     <div className="container2">
       <img src={callofduty} alt="" className="gif" />
-      <img src={videogame} alt="" className="imgvideogame"/>
+      <img src={videogame} alt="" className="imgvideogame" />
       <div className="hero">
         <div className="create">
-        <Link to="/creategame"><button>Create VideoGame</button></Link>
+          <Link to="/creategame">
+            <button>Create VideoGame</button>
+          </Link>
         </div>
-        <button className="btnreaload" onClick={(e) => handleClick(e)}>Reload Games</button>
+        <button className="btnreaload" onClick={(e) => handleClick(e)}>
+          Reload Games
+        </button>
         <div>
           <select className="select" onChange={(e) => handleOrderByName(e)}>
             <option>Alphabetical Order</option>
@@ -106,40 +105,50 @@ export default function Home() {
           </select>
           <select className="select" onChange={(e) => handleFilterGenre(e)}>
             <option value="all">All Genres</option>
-            {allGenres?.map((el) => (
-              <option key={el} value={el.name}>
-                {el.name}
-              </option>
-            ))}
+            {allGenres ? (
+              allGenres.map((el) => (
+                <option key={el} value={el.name}>
+                  {el.name}
+                </option>
+              ))
+            ) : (
+              <option>Loading genres...</option>
+            )}
           </select>
           <select className="select" onChange={(e) => handleCreated(e)}>
             <option value="all">All VideoGames</option>
             <option value="api">Existing</option>
             <option value="created">Created</option>
           </select>
-         
-            
+
           <Paginado
             gamesPerPage={gamesPerPage}
             allVideogames={allVideogames.length}
             paginado={paginado}
           />
-        
+
           <SearchBar />
-        
-          {
-          currentGames.length?
-          currentGames?.map((el) => {
-            return (
-              <fragment>
-                <Link to={"/detail/" + el.id}>
-                  <Card image={el.image} name={el.name} genre={el.genres} rating={el.rating} />
-                </Link>
-              </fragment>
-            );
-          })
-        : <p><Loading/></p>
-        }
+
+          {currentGames.length ? (
+            currentGames?.map((el) => {
+              return (
+                <fragment>
+                  <Link to={"/detail/" + el.id}>
+                    <Card
+                      image={el.image}
+                      name={el.name}
+                      genre={el.genres}
+                      rating={el.rating}
+                    />
+                  </Link>
+                </fragment>
+              );
+            })
+          ) : (
+            <p>
+              <Loading />
+            </p>
+          )}
         </div>
       </div>
     </div>
