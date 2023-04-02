@@ -6,7 +6,7 @@ import CreateVideogame from './components/CreateVideogame/CreateVideogame';
 import Detail from './components/Detail/Detail';
 import PageNotFound from './components/PageNotFound/PageNotFound';
 import axios from "axios"
-axios.defaults.baseURL = "http://localhost:3001/"
+axios.defaults.baseURL = "pi-videogame-production-d677.up.railway.app"
 
 function App() {
   return (
