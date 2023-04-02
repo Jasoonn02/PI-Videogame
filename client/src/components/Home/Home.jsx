@@ -129,7 +129,7 @@ export default function Home() {
 
           <SearchBar />
 
-          {currentGames && Array.isArray(currentGames) ? (
+          {currentGames && currentGames.length > 0 ? (
             currentGames.map((el) => {
               return (
                 <fragment>
@@ -145,9 +145,7 @@ export default function Home() {
               );
             })
           ) : (
-            <p>
-              <Loading />
-            </p>
+            <p>No hay juegos disponibles</p>
           )}
         </div>
       </div>
