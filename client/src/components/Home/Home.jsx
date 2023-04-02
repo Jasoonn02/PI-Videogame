@@ -106,7 +106,7 @@ export default function Home() {
           <select className="select" onChange={(e) => handleFilterGenre(e)}>
             <option value="all">All Genres</option>
             {allGenres ? (
-              allGenres.map((el) => (
+              allGenres?.map((el) => (
                 <option key={el} value={el.name}>
                   {el.name}
                 </option>
@@ -130,7 +130,7 @@ export default function Home() {
           <SearchBar />
 
           {currentGames ? (
-            currentGames.map((el) => {
+            currentGames?.map((el) => {
               return (
                 <fragment>
                   <Link to={"/detail/" + el.id}>
