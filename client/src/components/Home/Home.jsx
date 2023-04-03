@@ -121,20 +121,21 @@ export default function Home() {
 
           <SearchBar />
 
-          {currentGames?.map((el) => {
-            return (
-              <fragment>
-                <Link to={"/detail/" + el.id}>
-                  <Card
-                    image={el.image}
-                    name={el.name}
-                    genre={el.genres}
-                    rating={el.rating}
-                  />
-                </Link>
-              </fragment>
-            );
-          })}
+          {Array.isArray(currentGames) &&
+            currentGames.map((el) => {
+              return (
+                <fragment>
+                  <Link to={"/detail/" + el.id}>
+                    <Card
+                      image={el.image}
+                      name={el.name}
+                      genre={el.genres}
+                      rating={el.rating}
+                    />
+                  </Link>
+                </fragment>
+              );
+            })}
         </div>
       </div>
     </div>
