@@ -121,7 +121,7 @@ export default function Home() {
 
           <SearchBar />
 
-          {currentGames.length > 0 && Array.isArray(currentGames) ? (
+          {currentGames.length ? (
             currentGames?.map((el) => {
               return (
                 <fragment key={el.id}>
