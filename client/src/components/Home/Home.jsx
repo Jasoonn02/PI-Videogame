@@ -123,7 +123,7 @@ export default function Home() {
         
           <SearchBar />
         
-          {Array.isArray(currentGames) && currentGames.length ? (
+          {Array.isArray(currentGames) ? (
   currentGames?.map((el) => {
     return (
       <fragment>
