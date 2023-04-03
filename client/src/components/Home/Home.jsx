@@ -124,7 +124,7 @@ export default function Home() {
           {currentGames.length > 0 && Array.isArray(currentGames) ? (
             currentGames?.map((el) => {
               return (
-                <fragment>
+                <fragment key={el.id}>
                   <Link to={"/detail/" + el.id}>
                     <Card
                       image={el.image}
