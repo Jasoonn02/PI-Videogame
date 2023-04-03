@@ -121,8 +121,8 @@ export default function Home() {
 
           <SearchBar />
 
-          {Array.isArray(currentGames) &&
-            currentGames.map((el) => {
+          {currentGames.length > 0 && Array.isArray(currentGames) ? (
+            currentGames?.map((el) => {
               return (
                 <fragment>
                   <Link to={"/detail/" + el.id}>
@@ -135,7 +135,12 @@ export default function Home() {
                   </Link>
                 </fragment>
               );
-            })}
+            })
+          ) : (
+            <p>
+              <Loading />
+            </p>
+          )}
         </div>
       </div>
     </div>
