@@ -22,7 +22,7 @@ import Loading from "../Loading/Loading";
 export default function Home() {
   const dispatch = useDispatch();
 
-  const allVideogames = useSelector((state) => state.videogame);
+  const videogame = useSelector((state) => state.videogame);
   const allGenres = useSelector((state) => state.genre);
   const [order, setOrder] = useState(" ");
   const currentPage = useSelector((state) => state.currentPage);
@@ -30,7 +30,7 @@ export default function Home() {
 
   const indexOfLastVideogame = currentPage * gamesPerPage;
   const indexOfFirstVideogame = indexOfLastVideogame - gamesPerPage;
-  const currentGames = allVideogames.slice(
+  const currentGames = videogame.slice(
     indexOfFirstVideogame,
     indexOfLastVideogame
   );
@@ -115,7 +115,7 @@ export default function Home() {
 
           <Paginado
             gamesPerPage={gamesPerPage}
-            allVideogames={allVideogames.length}
+            videogame={videogame.length}
             paginado={paginado}
           />
 
@@ -126,7 +126,7 @@ export default function Home() {
               <Loading />
             </p>
           ) : (
-            currentGames.map((el) => {
+            currentGames?.map((el) => {
               return (
                 <div key={el?.id}>
                   <Link to={"/detail/" + el.id}>
