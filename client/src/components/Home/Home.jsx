@@ -121,25 +121,25 @@ export default function Home() {
 
           <SearchBar />
 
-          {currentGames.length > 0 ? (
-            currentGames?.map((el) => {
-              return (
-                <fragment key={el.id}>
-                  <Link to={"/detail/" + el.id}>
-                    <Card
-                      image={el.image}
-                      name={el.name}
-                      genre={el.genres}
-                      rating={el.rating}
-                    />
-                  </Link>
-                </fragment>
-              );
-            })
-          ) : (
+          {!currentGames.length > 0 ? (
             <p>
               <Loading />
             </p>
+          ) : (
+            currentGames.map((el) => {
+              return (
+                <div key={el?.id}>
+                  <Link to={"/detail/" + el.id}>
+                    <Card
+                      image={el?.image}
+                      name={el?.name}
+                      genre={el?.genres}
+                      rating={el?.rating}
+                    />
+                  </Link>
+                </div>
+              );
+            })
           )}
         </div>
       </div>
