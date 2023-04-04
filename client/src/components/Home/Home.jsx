@@ -121,7 +121,7 @@ export default function Home() {
 
           <SearchBar />
 
-          {!currentGames.length > 0 ? (
+          {!currentGames.length ? (
             <p>
               <Loading />
             </p>
